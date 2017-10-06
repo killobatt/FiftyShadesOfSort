@@ -9,9 +9,9 @@ Currently implemented:
  + [Cocktail shaker sort](https://en.wikipedia.org/wiki/Cocktail_shaker_sort)
  + [Insertion sort](https://en.wikipedia.org/wiki/Insertion_sort)
  + [Gnome sort](https://en.wikipedia.org/wiki/Gnome_sort)
+ + [Merge sort](https://en.wikipedia.org/wiki/Merge_sort)
  
 To be implemented: 
- + [Merge sort](https://en.wikipedia.org/wiki/Merge_sort)
  + [Binary tree sort](https://en.wikipedia.org/wiki/Tree_sort)
  + [Timsort](https://en.wikipedia.org/wiki/Timsort)
  + [Counting sort](https://en.wikipedia.org/wiki/Counting_sort)
