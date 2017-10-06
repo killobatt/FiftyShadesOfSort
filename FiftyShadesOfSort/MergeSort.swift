@@ -54,17 +54,25 @@ fileprivate func merge<Element>(array: [Element], begin: Int, middle: Int, end: 
 
 
 internal func mergeMixedSorted<Element>(array initialArray: [Element],
+                                        fallingBackTo subAlgorythm: ArraySortAlgorythmType,
+                                        at size: Int,
                                         by areInIncreasingOrder: (Element, Element) -> Bool) -> [Element] {
     var array = initialArray
-    mergeSort(array: &array, range: 0..<array.count, by: areInIncreasingOrder)
+    mergeMixedSort(array: &array,
+                   range: 0..<array.count,
+                   fallingBackTo: subAlgorythm,
+                   at: size,
+                   by: areInIncreasingOrder)
     return array
 }
 
 fileprivate func mergeMixedSort<Element>(array: inout [Element],
                                          range: CountableRange<Int>,
+                                         fallingBackTo subAlgorythm: ArraySortAlgorythmType,
+                                         at size: Int,
                                          by areInIncreasingOrder: (Element, Element) -> Bool) {
-    guard range.count > 100 else {
-        array.sort(with: .insertion, by: areInIncreasingOrder)
+    guard range.count > size else {
+        array.sort(with: subAlgorythm, by: areInIncreasingOrder)
         return
     }
     let divider = (range.lowerBound + range.upperBound) / 2

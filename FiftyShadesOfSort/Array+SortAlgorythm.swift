@@ -7,14 +7,15 @@
 //
 
 
-enum ArraySortAlgorythmType {
+indirect enum ArraySortAlgorythmType {
     case bubble
     case shaker
     case insertion
     case gnome
     
     case merge
-    case mergeMixed // on arrays with length < 100 fallbacks to insertion sort
+    case mergeMixed(fallbackAlgorythm: ArraySortAlgorythmType,
+        fallbackSize: Int) // e.g. on arrays with length < 100 fallbacks to insertion sort
 }
 
 
@@ -22,22 +23,28 @@ extension Array {
     
     typealias Algorythm = (Array, (Element, Element) -> Bool) -> Array
     
-    private var algorythms: [ArraySortAlgorythmType: Algorythm] {
-        return [
-            .bubble: bubbleSorted,
-            .shaker: shakerSorted,
-            .insertion: insertionSorted,
-            .gnome: gnomeSorted,
-            .merge: mergeSorted,
-            .mergeMixed: mergeMixedSorted,
-        ]
+    private func algorythm(for type: ArraySortAlgorythmType) -> Algorythm {
+        switch type {
+        case .bubble:
+            return bubbleSorted
+        case .shaker:
+            return shakerSorted
+        case .insertion:
+            return insertionSorted
+        case .gnome:
+            return gnomeSorted
+        case .merge:
+            return mergeSorted
+        case let .mergeMixed(fallbackAlgorythm, size):
+            return { (array: [Element], comparator: (Element, Element) -> Bool) -> [Element] in
+                return mergeMixedSorted(array: array, fallingBackTo: fallbackAlgorythm, at: size, by: comparator)
+            }
+        }
     }
     
-    func sorted(with algorythm: ArraySortAlgorythmType,
+    func sorted(with algorythmType: ArraySortAlgorythmType,
                 by areInIncreasingOrder: (Element, Element) -> Bool) -> [Element] {
-        guard let algo = algorythms[algorythm] else {
-            fatalError()
-        }
+        let algo = algorythm(for: algorythmType)
         return algo(self, areInIncreasingOrder)
     }
     

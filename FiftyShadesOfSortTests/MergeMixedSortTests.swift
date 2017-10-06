@@ -14,7 +14,7 @@ import XCTest
 class MergeMixedSortTests: XCTestCase {
     
     var testData = TestData()
-    var testAlgo = ArraySortAlgorythmType.mergeMixed
+    var testAlgo = ArraySortAlgorythmType.mergeMixed(fallbackAlgorythm: .insertion, fallbackSize: 100)
     
     override func setUp() {
         super.setUp()
