@@ -16,6 +16,7 @@ indirect enum ArraySortAlgorythmType {
     case merge
     case mergeMixed(fallbackAlgorythm: ArraySortAlgorythmType,
         fallbackSize: Int) // e.g. on arrays with length < 100 fallbacks to insertion sort
+    case quick
 }
 
 
