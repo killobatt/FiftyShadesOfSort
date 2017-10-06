@@ -19,6 +19,10 @@
 		1E8D29271F86EA9700CF77C9 /* InsertionSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8D29261F86EA9700CF77C9 /* InsertionSort.swift */; };
 		1E8D29291F86ED3600CF77C9 /* GnomeSortTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8D29281F86ED3600CF77C9 /* GnomeSortTests.swift */; };
 		1E8D292B1F86ED4800CF77C9 /* GnomeSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8D292A1F86ED4800CF77C9 /* GnomeSort.swift */; };
+		1EF02B781F87C65000696D5D /* MergeSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF02B771F87C65000696D5D /* MergeSort.swift */; };
+		1EF02B7A1F87C67E00696D5D /* MergeSortTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF02B791F87C67E00696D5D /* MergeSortTests.swift */; };
+		1EF02B7E1F883B5A00696D5D /* MergeMixedSortTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF02B7D1F883B5A00696D5D /* MergeMixedSortTests.swift */; };
+		1EF02B801F883BBB00696D5D /* SwiftStandardSortTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF02B7F1F883BBB00696D5D /* SwiftStandardSortTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +51,10 @@
 		1E8D29261F86EA9700CF77C9 /* InsertionSort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertionSort.swift; sourceTree = "<group>"; };
 		1E8D29281F86ED3600CF77C9 /* GnomeSortTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GnomeSortTests.swift; sourceTree = "<group>"; };
 		1E8D292A1F86ED4800CF77C9 /* GnomeSort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GnomeSort.swift; sourceTree = "<group>"; };
+		1EF02B771F87C65000696D5D /* MergeSort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MergeSort.swift; sourceTree = "<group>"; };
+		1EF02B791F87C67E00696D5D /* MergeSortTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MergeSortTests.swift; sourceTree = "<group>"; };
+		1EF02B7D1F883B5A00696D5D /* MergeMixedSortTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MergeMixedSortTests.swift; sourceTree = "<group>"; };
+		1EF02B7F1F883BBB00696D5D /* SwiftStandardSortTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftStandardSortTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +103,7 @@
 				1E79714A1F86DFA600E25352 /* ShakerSort.swift */,
 				1E8D29241F86EA6800CF77C9 /* InsertionSort.swift */,
 				1E8D292A1F86ED4800CF77C9 /* GnomeSort.swift */,
+				1EF02B771F87C65000696D5D /* MergeSort.swift */,
 				1E79712E1F86D8D500E25352 /* Info.plist */,
 			);
 			path = FiftyShadesOfSort;
@@ -107,6 +116,9 @@
 				1E79714C1F86E02500E25352 /* ShakerSortTests.swift */,
 				1E8D29261F86EA9700CF77C9 /* InsertionSort.swift */,
 				1E8D29281F86ED3600CF77C9 /* GnomeSortTests.swift */,
+				1EF02B791F87C67E00696D5D /* MergeSortTests.swift */,
+				1EF02B7D1F883B5A00696D5D /* MergeMixedSortTests.swift */,
+				1EF02B7F1F883BBB00696D5D /* SwiftStandardSortTests.swift */,
 				1E7971461F86D93C00E25352 /* TestData.swift */,
 				1E79713A1F86D8D500E25352 /* Info.plist */,
 			);
@@ -224,6 +236,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1EF02B781F87C65000696D5D /* MergeSort.swift in Sources */,
 				1E7971451F86D8F300E25352 /* BubbleSort.swift in Sources */,
 				1E8D29251F86EA6800CF77C9 /* InsertionSort.swift in Sources */,
 				1E79714B1F86DFA600E25352 /* ShakerSort.swift in Sources */,
@@ -236,6 +249,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1EF02B801F883BBB00696D5D /* SwiftStandardSortTests.swift in Sources */,
+				1EF02B7E1F883B5A00696D5D /* MergeMixedSortTests.swift in Sources */,
+				1EF02B7A1F87C67E00696D5D /* MergeSortTests.swift in Sources */,
 				1E7971391F86D8D500E25352 /* BubbleSortTests.swift in Sources */,
 				1E8D29271F86EA9700CF77C9 /* InsertionSort.swift in Sources */,
 				1E8D29291F86ED3600CF77C9 /* GnomeSortTests.swift in Sources */,

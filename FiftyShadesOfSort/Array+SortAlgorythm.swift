@@ -12,6 +12,9 @@ enum ArraySortAlgorythmType {
     case shaker
     case insertion
     case gnome
+    
+    case merge
+    case mergeMixed // on arrays with length < 100 fallbacks to insertion sort
 }
 
 
@@ -25,6 +28,8 @@ extension Array {
             .shaker: shakerSorted,
             .insertion: insertionSorted,
             .gnome: gnomeSorted,
+            .merge: mergeSorted,
+            .mergeMixed: mergeMixedSorted,
         ]
     }
     
