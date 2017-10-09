@@ -10,11 +10,12 @@ Currently implemented:
  + [Insertion sort](https://en.wikipedia.org/wiki/Insertion_sort)
  + [Gnome sort](https://en.wikipedia.org/wiki/Gnome_sort)
  + [Merge sort](https://en.wikipedia.org/wiki/Merge_sort)
+ + [Quick sort](https://en.wikipedia.org/wiki/Quicksort)
+ + [Binary tree sort](https://en.wikipedia.org/wiki/Tree_sort)
+
  
 To be implemented: 
- + [Binary tree sort](https://en.wikipedia.org/wiki/Tree_sort)
  + [Timsort](https://en.wikipedia.org/wiki/Timsort)
  + [Counting sort](https://en.wikipedia.org/wiki/Counting_sort)
- + [Quick sort](https://en.wikipedia.org/wiki/Quicksort)
  + ...
 
