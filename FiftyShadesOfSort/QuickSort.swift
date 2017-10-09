@@ -20,30 +20,40 @@ fileprivate func quickSort<Element>(array: inout [Element],
     guard range.count > 1 else {
         return
     }
-    let divider = (range.lowerBound + range.upperBound) / 2
-    let leftRange = range.lowerBound..<divider
-    let rightRange = divider..<range.upperBound
-    quickSort(array: &array, range: leftRange, by: areInIncreasingOrder)
-    quickSort(array: &array, range: rightRange, by: areInIncreasingOrder)
-    array = partition(array: array, begin: range.lowerBound, middle: divider, end: range.upperBound, by: areInIncreasingOrder)
+    let partitionIndex = partition(array: &array, range: range, by: areInIncreasingOrder)
+    quickSort(array: &array, range: range.lowerBound..<partitionIndex, by: areInIncreasingOrder)
+    quickSort(array: &array, range: partitionIndex..<range.upperBound, by: areInIncreasingOrder)
 }
 
 
-fileprivate func partition<Element>(array: [Element], begin: Int, middle: Int, end: Int,
-                                    by areInIncreasingOrder: (Element, Element) -> Bool) -> [Element] {
-    var mergedArray = array
-    var i = begin
-    var j = middle
+fileprivate func partition<Element>(array: inout [Element],
+                                    range: CountableRange<Int>,
+                                    by areInIncreasingOrder: (Element, Element) -> Bool) -> Int {
+    let pivot = getPivot(array: array, range: range, by: areInIncreasingOrder)
+    var i = range.lowerBound
+    var j = range.upperBound - 1
     
-    for k in begin..<end {
-        if j >= end || (i < middle && areInIncreasingOrder(array[i], array[j])) {
-            mergedArray[k] = array[i]
+    while i <= j {
+        while areInIncreasingOrder(array[i], pivot) {
             i += 1
-        } else {
-            mergedArray[k] = array[j]
-            j += 1
         }
+        while areInIncreasingOrder(pivot, array[j]) {
+            j -= 1
+        }
+        if i <= j {
+            array.swapAt(i, j)
+            i += 1
+            j -= 1
+        }
+        
     }
     
-    return mergedArray
+    return i
+}
+
+
+fileprivate func getPivot<Element>(array: [Element], range: CountableRange<Int>,
+                                   by areInIncreasingOrder: (Element, Element) -> Bool) -> Element {
+    let elementIndex = range.lowerBound + Int(arc4random()) % (range.upperBound - range.lowerBound)
+    return array[elementIndex]
 }

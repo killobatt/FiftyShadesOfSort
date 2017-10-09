@@ -17,6 +17,7 @@ indirect enum ArraySortAlgorythmType {
     case mergeMixed(fallbackAlgorythm: ArraySortAlgorythmType,
         fallbackSize: Int) // e.g. on arrays with length < 100 fallbacks to insertion sort
     case quick
+    case tripleQuick    // like quick sort, but devides array onto 3 parts instead of two, what decreases recursion depth
 }
 
 
@@ -40,6 +41,10 @@ extension Array {
             return { (array: [Element], comparator: (Element, Element) -> Bool) -> [Element] in
                 return mergeMixedSorted(array: array, fallingBackTo: fallbackAlgorythm, at: size, by: comparator)
             }
+        case .quick:
+            return quickSorted
+        case .tripleQuick:
+            return tripleQuickSorted
         }
     }
     
