@@ -18,6 +18,7 @@ indirect enum ArraySortAlgorythmType {
         fallbackSize: Int) // e.g. on arrays with length < 100 fallbacks to insertion sort
     case quick
     case tripleQuick    // like quick sort, but devides array onto 3 parts instead of two, what decreases recursion depth
+    case binaryTree
 }
 
 
@@ -45,6 +46,8 @@ extension Array {
             return quickSorted
         case .tripleQuick:
             return tripleQuickSorted
+        case .binaryTree:
+            return binaryTreeSorted
         }
     }
     
