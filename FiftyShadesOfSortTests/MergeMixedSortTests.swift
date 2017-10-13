@@ -23,6 +23,17 @@ class MergeMixedSortTests: XCTestCase {
     override func tearDown() {
         super.tearDown()
     }
+
+    func testEmptyArray() {
+        // GIVEN
+        let testArray: [Int] = []
+
+        // WHEN
+        let sortedArray = testArray.sorted(with: testAlgo, by: <)
+
+        // THEN
+        XCTAssertEqual(sortedArray, testArray)
+    }
     
     func test1Integer() {
         // GIVEN

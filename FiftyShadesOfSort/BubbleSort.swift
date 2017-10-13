@@ -10,6 +10,9 @@
 internal func bubbleSorted<Element>(array initialArray: [Element],
                                     by areInIncreasingOrder: (Element, Element) -> Bool) -> [Element] {
     var array = initialArray
+
+    guard !array.isEmpty else { return array }
+
     for i in 0..<array.count-1 {
         for j in 0..<array.count-i-1 {
             if !areInIncreasingOrder(array[j], array[j+1]) {
